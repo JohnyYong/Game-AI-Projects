@@ -54,6 +54,12 @@ Optimizations Applied:
 
 These optimizations significantly reduced search time while maintaining correctness.
 
+### Directional Bitmask
+- For each grid cell, valid movement directions are precomputed and stored as a bitmask. This allows the algorithm to check movement legality using simple bitwise operations instead of terrain lookups. It reduces branching and improves performance in the neighbor expansion stage.
+
+### Flattened Array
+- All nodes are stored in a single 1D array using row-column indexing. This improves cache locality and avoids pointer chasing. As a result, node access is faster and more memory-efficient.
+
 ## Project 3: Terrain Analysis
 
 This project focused on analyzing environmental data to simulate realistic visibility, openness, and perception systems for AI agents.
